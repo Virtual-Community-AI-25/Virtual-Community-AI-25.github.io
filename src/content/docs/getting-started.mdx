@@ -1,0 +1,106 @@
+---
+title: "Getting Started"
+description: "Learn how to set up and run Virtual Community for embodied social and physical intelligence research"
+order: 1
+author: "Virtual Community Team"
+publishedDate: 2025-06-19
+lastModified: 2025-06-19
+featured: true
+difficulty: "beginner"
+draft: false
+---
+
+## What is Virtual Community?
+
+Virtual Community is an open-world platform that simulates human-robot coexistence in shared communities, featuring a physics-based multi-agent simulator and real-world 3D scenes to study embodied social and physical intelligence at scale.
+
+## Installation
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/UMass-Embodied-AGI/Virtual-Community
+cd Virtual-Community
+```
+
+### Step 2: Install Dependencies
+
+```bash
+# We're using python 3.11, cuda 11.7 and ubuntu 24.04. If you are using a different version, please modify the env.yaml file accordingly.
+conda env create -f env.yaml
+
+# Install Genesis from the source:
+cd Genesis
+pip install -e .
+
+# (Optional) To run the example tour agent, install volume grid lib:
+cd agents/sg
+./setup.sh
+```
+
+### Step 3: Assets Preparation
+
+Download the assets from the [Google Drive](https://drive.google.com/drive/u/2/folders/15XR80efNfgdpYi-5dXh3lJ35p9WBqFc5) and organize them under `Genesis/genesis/assets/ViCo`.
+
+<br />
+Assets include:
+<ul class="list-disc ml-6">
+  <li>`scene` folder: contains the generated outdoor 3D scenes</li>
+  <li>`robots` folder: contains the robot models</li>
+  <li>`objects` folder: contains the object models</li>
+  <li>`avatars` folder: contains the human avatars' skin and motion</li>
+  <li>`cars` folder: contains the vehicle models including car, bus, bike, etc</li>
+</ul>
+<br />
+
+If you want to use indoor scenes from GRUTopia, please follow their instructions [here](https://github.com/OpenRobotLab/GRUtopia?tab=readme-ov-file#%EF%B8%8F-assets) to download the commercial_scenes.zip, and unzip it under `Genesis/genesis/assets/ViCo/`.
+<br />
+
+After this step, the directory structure should be:
+
+```
+Genesis/genesis/assets/ViCo/
+├── scene/
+├── robots/
+├── objects/
+├── avatars/
+├── cars/
+└── commercial_scenes/ (optional)
+```
+
+## Run the Simulation
+
+Run the following script to test the simulation, where 15 agents will tour around the New York Scene.
+
+```bash
+./scripts/run_tour_agent.sh
+```
+
+Tips: Loading all indoor scenes and objects may introduce a large memory cost. If you encounter memory issues, consider adding `--no_load_indoor_scene` flag to the script to disable indoor scenes.
+
+### System Requirements
+
+#### System Memory (RAM)
+<ul class="list-disc ml-6">
+  <li>**Minimum**: 24 GB</li>
+  <li>**Recommended**: 32 GB</li>
+</ul>
+
+#### GPU Memory (VRAM)
+<ul class="list-disc ml-6">
+  <li>**Minimum**: 10 GB</li>
+  <li>**Recommended**: 16 GB</li>
+</ul>
+
+#### Disk Space
+<ul class="list-disc ml-6">
+  <li>**Minimum**: 60 GB</li>
+  <li>**Recommended**: 100 GB</li>
+</ul>
+
+## TroubleShooting
+
+<ul class="list-disc ml-6">
+  <li>`libstdcxx. so.6: version GLIBCXX 3.4.32’not found required by sg/builder/builtin/libbuider.so` To resolve this issue, you may need to update your GCC runtime. You can do this by running:```bash conda install -c conda-forge libstdcxx-ng```</li>
+  <li>Only _pygltflib-1.16.0_ works for now, the latest version _pygltflib-1.16.1_ will slower the scene loading.</li>
+</ul>

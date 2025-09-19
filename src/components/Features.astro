@@ -1,0 +1,312 @@
+---
+// Import manipulation videos
+import manipContactVideo from "../assets/videos/manip_contact.mp4";
+import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
+import methodVideo from "../assets/videos/method.mp4";
+import scenegenVideo from "../assets/videos/scene_gen.mp4";
+import trafficDemoVideo from "../assets/videos/traffic_demo.mp4";
+import go2ContactVideo from "../assets/videos/go2_contact.mp4";
+import communityGenVideo from "../assets/videos/community_gen.mp4";
+import indoor1Video from "../assets/videos/indoor1_fixed.mp4";
+import indoor2Video from "../assets/videos/indoor2_fixed.mp4";
+import VideoLazyLoader from "./utils/VideoLazyLoader.astro";
+---
+
+<section id="features" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 fade-in-up">
+      <h2 class="text-fluid-3xl font-bold text-slate-900 mb-6">Key Features</h2>
+      <p class="text-fluid-lg text-slate-600 max-w-3xl mx-auto">
+        Virtual Community integrates geospatial data with generative models to create
+        interactive, scalable open-world scenes with socially grounded agent
+        communities.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Feature 1: Scalable Scenes -->
+      <div class="bg-white p-8 border border-slate-200 shadow-sm slide-in-left">
+        <div class="flex items-center mb-6">
+          <div
+            class="w-12 h-12 bg-slate-100 border border-slate-200 flex items-center justify-center mr-4"
+          >
+            <svg
+              class="w-6 h-6 text-slate-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-fluid-xl font-bold text-slate-900">
+            Scalable Simulation-Ready Scenes
+          </h3>
+        </div>
+
+        <p class="text-slate-600 mb-6 leading-relaxed">
+          A fully automatic online pipeline that creates 3D scenes with real-world geospatial data and generative models.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
+            <div>
+              <div class="text-slate-900 font-semibold">
+                Real World Grounded Geospatial Scenes
+              </div>              <div class="text-slate-600 text-sm">
+                Geospatial data ensures the diversity and scale of outdoor 3D scenes.
+              </div>
+              <VideoLazyLoader
+                src={scenegenVideo}
+                class="w-full h-full object-cover mt-2"
+                autoplay={true}
+                muted={true}
+                loop={true}
+                controls={true}
+                preload="metadata"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-slate-500 mt-2 flex-shrink-0"></div>
+            <div>
+              <div class="text-slate-900 font-semibold">
+                Automatic Semantic Annotations
+              </div>
+              <div class="text-slate-600 text-sm">
+                Locations and objects automatically labeled within scenes
+              </div>
+              <img
+                class="w-full h-auto object-cover mt-2"
+                src="/images/annotation.png"
+                alt="Semantic Annotations Example"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
+            <div class="flex-1">
+              <div class="text-slate-900 font-semibold">
+                Interactive Indoor Scenes and Objects
+              </div>
+              <div class="text-slate-600 text-sm">
+                Indoor scenes and objects created according to place annotations.
+              </div>
+
+              <div class="mt-4 space-y-6">
+                <div>
+
+                <div class="flex">
+                  <VideoLazyLoader
+                    src={indoor1Video}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                  <VideoLazyLoader
+                    src={indoor2Video}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Feature 2: Agent Communities -->
+      <div
+        class="bg-white p-8 border border-slate-200 shadow-sm slide-in-right"
+      >
+        <div class="flex items-center mb-6">
+          <div
+            class="w-12 h-12 bg-slate-100 border border-slate-200 flex items-center justify-center mr-4"
+          >
+            <svg
+              class="w-6 h-6 text-slate-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-fluid-xl font-bold text-slate-900">
+            Agent Community
+          </h3>
+        </div>
+
+        <p class="text-slate-600 mb-6 leading-relaxed">
+          Leverage foundation models and real-world annotations to generate communities and simulate with Genesis physics engine.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
+            <div>
+              <div class="text-slate-900 font-semibold">
+                Agent Community Generation
+              </div>              <div class="text-slate-600 text-sm">
+                LLM-powered profiles with personalities and social connections
+              </div>
+              <VideoLazyLoader
+                src={communityGenVideo}
+                class="w-full h-full object-cover mt-2"
+                autoplay={true}
+                muted={true}
+                loop={true}
+                controls={true}
+                preload="metadata"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-slate-500 mt-2 flex-shrink-0"></div>
+            <div>
+              <div class="text-slate-900 font-semibold">
+                Automatic traffic system
+              </div>              <div class="text-slate-600 text-sm">
+                pedestrian flow, vehicle flow, transit system
+              </div>
+              <VideoLazyLoader
+                src={trafficDemoVideo}
+                class="w-full h-full object-cover mt-2"
+                autoplay={true}
+                muted={true}
+                loop={true}
+                controls={true}
+                preload="metadata"
+              />
+            </div>
+          </div>
+
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-slate-400 mt-2 flex-shrink-0"></div>
+            <div class="flex-1">
+              <div class="text-slate-900 font-semibold">
+                Human and robot interaction
+              </div>
+              <div class="text-slate-600 text-sm">
+                Genesis powers physically realistic robot interactions in the community
+              </div>              <!-- Video row -->
+              <div class="mt-4">
+                <div class="flex">
+                  <VideoLazyLoader
+                    src={manipContactVideo}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                  <VideoLazyLoader
+                    src={go2ContactVideo}
+                    class="w-1/2 h-auto shadow object-cover"
+                    controls={true}
+                    preload="metadata"
+                    autoplay={true}
+                    muted={true}
+                    loop={true}
+                  />
+                </div>
+                <div class="text-center text-xs text-slate-500 mt-2">
+                  Robot simulation with contact visualized
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<style>
+  /* Scroll Animation Styles */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .slide-in-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .slide-in-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
+
+<script>
+  // Scroll animation functionality
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with animation classes
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(
+      ".fade-in-up, .slide-in-left, .slide-in-right"
+    );
+    animatedElements.forEach((el) => observer.observe(el));
+  });
+</script>

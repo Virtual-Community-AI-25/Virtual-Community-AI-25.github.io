@@ -1,0 +1,289 @@
+---
+// Import video assets using Vite optimization
+import demoVideo from "../assets/videos/demo.mp4";
+import manipContactVideo from "../assets/videos/manip_contact.mp4";
+import manipNoContactVideo from "../assets/videos/manip_nocontact.mp4";
+
+// Real-World Aligned Scenes for Simulation videos
+import amsterdam from "../assets/videos/gif/amsterdam.mp4";
+import newyork from "../assets/videos/gif/newyork.mp4";
+import bratislava from "../assets/videos/gif/bratislava.mp4";
+import brussels from "../assets/videos/gif/brussels.mp4";
+import calgary from "../assets/videos/gif/calgary.mp4";
+import hamburg from "../assets/videos/gif/hamburg.mp4";
+import columbus from "../assets/videos/gif/columbus.mp4";
+import florence from "../assets/videos/gif/florence.mp4";
+import london from "../assets/videos/gif/london.mp4";
+import detroit from "../assets/videos/gif/detroit.mp4";
+import denver from "../assets/videos/gif/denver.mp4";
+import charlotte from "../assets/videos/gif/charlotte.mp4";
+
+// Detroit detailed videos
+import detroitDrone from "../assets/videos/DETROIT_drone.mp4";
+import detroitH1 from "../assets/videos/DETROIT_humanoid.mp4";
+import detroitGo2 from "../assets/videos/DETROIT_go2.mp4";
+import detroitHusky from "../assets/videos/DETROIT_husky.mp4";
+import detroitGR from "../assets/videos/DETROIT_google_robot.mp4";
+import detroitSPOT from "../assets/videos/DETROIT_spot.mp4";
+
+// Social Event Demonstrations videos
+import discussionScene from "../assets/videos/detroit_discussion.mp4";
+import robotScene from "../assets/videos/detroit_robot.mp4";
+import robotFollow from "../assets/videos/detroit_follow.mp4";
+import robotRun from "../assets/videos/london_run.mp4";
+import robotDog from "../assets/videos/detroit_patrol.mp4";
+import assaultScene from "../assets/videos/bratislava_assault.mp4";
+import campaignScene from "../assets/videos/charlotte_campaign.mp4";
+import proposalScene from "../assets/videos/belgrade_proposal.mp4";
+import madridDancing from "../assets/videos/madridDancing.mp4";
+
+// Scene-Grounded Agent Communities videos
+import florenceScene from "../assets/videos/FLORENCEscene.mp4";
+import madridScene from "../assets/videos/MADRIDscene.mp4";
+import denverScene from "../assets/videos/DENVERscene.mp4";
+import belgradeScene from "../assets/videos/BELGRADEscene.mp4";
+import newyorkScene from "../assets/videos/newyork.mp4";
+import londonScene from "../assets/videos/london.mp4";
+import detroitScene from "../assets/videos/detroit_robot.mp4";
+import amsterdamScene from "../assets/videos/amsterdam.mp4";
+---
+
+<section id="demo" class="py-12 lg:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Physically Realistic Simulation for Embodied Multi-Agent -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Robotic Agents
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          [
+            { src: detroitDrone, label: "Bitcraze Crazyflie 2" },
+            { src: detroitH1, label: "UniTree H1" },
+            { src: detroitGo2, label: "UniTree Go2" },
+            { src: detroitHusky, label: "Husky Robot" },
+            { src: detroitSPOT, label: "Boston Dynamics Spot" },
+            { src: detroitGR, label: "Google Robot" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video
+                  class="w-full h-full object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  <source src={src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label}
+                </h4>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Social Interaction Demonstrations -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Social and Physical Interaction
+      </h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          [
+            { src: discussionScene, label: "Group Discussion" },
+            { src: assaultScene, label: "Assault" },
+            { src: robotScene, label: "Human Interacting with Robot" },
+            { src: campaignScene, label: "Political Campaign" },
+            { src: proposalScene, label: "Public Proposal" },
+            { src: madridDancing, label: "Dancing Together" },
+            { src: robotDog, label: "Robot Moving to Human" },
+            { src: robotFollow, label: "Robot Following Human" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow min-h-[200px]">
+              <div class="aspect-video bg-slate-50 overflow-hidden flex items-center justify-center">
+                {src ? (
+                  <video
+                    class="w-full h-full object-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                  >
+                    <source src={src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <span class="text-slate-400 text-sm">Coming Soon</span>
+                )}
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label || "TBD"}
+                </h4>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Agent Communities -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Scene-Grounded Agent Communities
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          [
+            { src: florenceScene, label: "Florence" },
+            { src: madridScene, label: "Madrid" },
+            { src: denverScene, label: "Denver" },
+            { src: londonScene, label: "London" },
+            { src: newyorkScene, label: "New York" },
+            { src: amsterdamScene, label: "Amsterdam" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+              <div class="aspect-square bg-slate-50 overflow-hidden">
+                <video
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  autoplay
+                  muted
+                  loop
+                >
+                  <source src={src} type="video/mp4" />
+                </video>
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label}
+                </h4>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Real World Grounded Geospatial Scenes -->
+    <div class="mb-20 fade-in-up">
+      <h3 class="text-fluid-2xl font-bold text-slate-900 mb-8 text-center">
+        Real World Grounded Geospatial Scenes
+      </h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          [
+            { src: amsterdam, label: "Amsterdam, Netherlands" },
+            { src: newyork, label: "New York, United States" },
+            { src: bratislava, label: "Bratislava, Slovakia" },
+            { src: brussels, label: "Brussels, Belgium" },
+            { src: calgary, label: "Calgary, Canada" },
+            { src: hamburg, label: "Hamburg, Germany" },
+            { src: columbus, label: "Columbus, United States" },
+            { src: florence, label: "Florence, Italy" },
+            { src: london, label: "London, United Kingdom" },
+            { src: detroit, label: "Detroit, United States" },
+            { src: denver, label: "Denver, United States" },
+            { src: charlotte, label: "Charlotte, United States" },
+          ].map(({ src, label }) => (
+            <div class="bg-white border border-slate-200 shadow-sm overflow-hidden group hover:shadow-md transition-shadow">
+              <div class="aspect-video bg-slate-50 overflow-hidden">
+                <video
+                  class="w-full h-full object-cover"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  <source src={src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="p-4 text-center">
+                <h4 class="font-semibold text-slate-900 text-fluid-base">
+                  {label}
+                </h4>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Embla Carousel Styles */
+  .embla {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .embla__slide {
+    flex: 0 0 300px;
+    min-width: 0;
+  }
+
+  /* Scroll Animation Styles */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 768px) {
+    .embla__slide {
+      flex: 0 0 350px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .embla__slide {
+      flex: 0 0 400px;
+    }
+  }
+</style>
+
+<script>
+  // Scroll animation functionality
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with animation classes
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".fade-in-up");
+    animatedElements.forEach((el) => observer.observe(el));
+  });
+</script>
