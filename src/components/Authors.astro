@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import authorData from "../assets/author_images.json";
+
+// Import all images
+const images = import.meta.glob("../assets/images/*", { eager: true });
+
+const imageMap: Record<string, any> = Object.entries(images).reduce(
+  (acc, [path, imageModule]) => {
+    const imageName = path.split("/").pop()?.split(".")[0];
+    if (
+      imageName &&
+      imageModule &&
+      typeof imageModule === "object" &&
+      "default" in imageModule
+    ) {
+      acc[imageName] = (imageModule as any).default;
+    }
+    return acc;
+  },
+  {} as Record<string, any>
+);
+
+function getAuthorImage(photoName: string) {
+  const imageName = photoName.split(".")[0];
+  return imageName ? imageMap[imageName] : null;
+}
+---
